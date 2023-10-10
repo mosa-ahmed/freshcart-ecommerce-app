@@ -28,7 +28,7 @@ const validationSchema = Yup.object({
   name:Yup.string().min(3,'name minLength is 3').max(10,'name maxLength is 10').required(),
   email:Yup.string().email('email is invalid').required(),
   phone:Yup.string().matches(phoneRegex,'phone is invalid').required(),
-  password:Yup.string().matches(/^[A-Za-z][a-zA-Z0-9]{5,10}$/,'password is invalid').required(),
+  password:Yup.string().matches(/^[A-Za-z][a-zA-Z0-9]{5,10}$/,'password must start with a capital letter').required(),
   rePassword:Yup.string().oneOf([Yup.ref('password')],'repassword does not match').required()
 })
 
